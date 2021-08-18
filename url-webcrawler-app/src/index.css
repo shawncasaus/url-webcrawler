@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button { 
+  border-radius: 0% !important;
+  background-color: #000 !important;
+  opacity: 0.75 !important;
+}
+
+.nav-bar {
+  background-color: #000;
+}
+
+.url-select {
+  min-height: 400px
+}
+
+.url-select .nav-fill {
+  background-color: #f5f5f5 !important;
+  border-top: #000 !important;
+}
+
+.url-select .nav-link {
+  font-size: 20px;
+  color: #000 !important;
+}
+
+.url-form {
+  width: 50%;
+  text-align: left;
+  margin: 2rem;
+}
+
+.url-form button {
+  width: 100%;
+}
+
+.input-col {
+  padding: 0 !important;
+}
+
+.url-history-pagination {
+  text-align: center !important;
+  margin: auto !important;
+}
+
+.url-history-pagination ul {
+  display: inline-flex !important;
+  color: #000 !important;
+}
+
+.url-history-pagination span {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+.url-history-pagination a {
+  color: #000 !important;
+}
+
+.words-table h1 {
+  font-size: 28px;
+  color: #000;
+  text-align: center;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.footer {
+  background-color: #000;
+}
+
+.footer h3 {
+  text-align: center !important;
+  margin: auto !important;
+  color: #fff !important;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .url-form {
+    width: 75%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}

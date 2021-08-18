@@ -1,10 +1,11 @@
+import Components from './components';
 import './App.css';
 import './index.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>URL Web Crawler App</h1>
+    <div className="webCrawlerApp" data-testid="webCrawlerApp">
+      <Components />
     </div>
   );
 }

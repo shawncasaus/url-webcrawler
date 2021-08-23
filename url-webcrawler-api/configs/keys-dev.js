@@ -1,0 +1,1 @@
+export default uri = "mongodb+srv://shawn1833:5fZqH9I7Z57EbVZ5@webcrawlercluster.t7wlp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";

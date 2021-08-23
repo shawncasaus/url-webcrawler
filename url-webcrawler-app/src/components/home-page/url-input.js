@@ -14,6 +14,7 @@ const URLInput = ({url, setUrl}) => {
 
     const handleSubmit = (e) => {
         setUrl(e.url);
+        
     }
 
     return (

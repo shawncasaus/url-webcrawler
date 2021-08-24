@@ -11,7 +11,7 @@ const fetchUrlContent = (url: string): Promise<string>  => {
         return response.data;
     })
     .catch(error => {
-        console.log(error);
+        console.error(error);
         return 'error';
     });
 }
@@ -53,7 +53,7 @@ const count = (cleanBody: string): Array<object> => {
 
 
 //middleware that grabs the url input from the request and sets the response to an object of words with their count
-async function GetWordCount (req :Request, res: Response, next: NextFunction) {
+const GetWordCount = async (req :Request, res: Response, next: NextFunction) => {
     const url: string = req.params.url;
     const enhancedURL: string = url.replace(/\@/, '/');
     var expression: RegExp = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi;
@@ -65,11 +65,13 @@ async function GetWordCount (req :Request, res: Response, next: NextFunction) {
     } else {
         const content: string = await fetchUrlContent(enhancedURL);
         if (content === 'error') {
-            res.locals.result = 'Error, something went wrong!'
+            res.status(500);
+            res.locals.result = 'oops... something went wrong';
         } else {
             const isTxt = (enhancedURL.slice(-4) !== '.txt');
             const cleanedContent: string = (isTxt) ? clean(content) : cleanTxt(content);
             const result: object = count(cleanedContent);
+            res.status(200);
             res.locals.result = result; //response passed to next step in api process
         }
         next();

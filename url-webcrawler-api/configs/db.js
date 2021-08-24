@@ -1,10 +1,21 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 const uri = require('./keys-dev');
 
-const uri = uri;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+const connectionParams= {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+};
+
+const connectDB = async () => {
+    try {
+        const conn = await mongoose.connect(uri, connectionParams);
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (err){
+        console.error(err);  
+        process.exit(1);
+    }
+}
+
+module.exports = connectDB;

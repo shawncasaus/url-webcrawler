@@ -20,6 +20,7 @@ const WordTable = ({url}) => {
         }
     }, [url]);
 
+    //stores url in db
     useEffect(() => {        
         //preset axios options
         const options = {
@@ -34,6 +35,7 @@ const WordTable = ({url}) => {
             });
     }, [enhancedUrl]);
 
+    //gets word count from db
     useEffect(() => {        
         //preset axios options
         const options = {

@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import {Form, Button, Col, Row} from 'react-bootstrap';
 
 
-const URLInput = ({url, setUrl}) => {
+const URLInput = ({setUrl}) => {
     var expression = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi;
 
     const schema = yup.object().shape({
@@ -65,12 +65,10 @@ const URLInput = ({url, setUrl}) => {
 }
 
 URLInput.defaultProps = {
-    url: '',
     setUrl: () => {console.log('Error: setUrl not defined.')},
   }
 
   URLInput.propTypes = {
-    url: PropTypes.string,
     setUrl: PropTypes.func,
   }
 

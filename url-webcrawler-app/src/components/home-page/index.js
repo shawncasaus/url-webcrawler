@@ -17,6 +17,7 @@ const HomePage = () => {
         }
     }, [url]);
 
+    //handles tabbing in nav bar
     useEffect(() => {
         if (curTab === 'url-input') {
             setUrlInputDisplay({display: 'block'});
@@ -50,11 +51,11 @@ const HomePage = () => {
                         <URLInput url={url} setUrl={setUrl} />
                     </Col>
                     <Col style={urlHistoryDisplay}>
-                        <URLHistory />
+                        <URLHistory setUrl={setUrl} />
                     </Col>
                 </Row>
             </div>
-            <WordTable />
+            <WordTable url={url} />
         </HomePageContext>
     )
 }

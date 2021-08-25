@@ -18,6 +18,15 @@ button {
   opacity: 0.75 !important;
 }
 
+a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+a:hover {
+  font-size: 125%;
+}
+
 .nav-bar {
   background-color: #000;
 }

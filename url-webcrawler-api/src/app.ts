@@ -5,9 +5,11 @@ import GetAllURLS from './middleware/all-urls';
 
 const connectDB = require('../configs/db');
 const morgan = require('morgan');
+const cors = require('cors');
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 connectDB();
+app.use(cors());
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
@@ -23,7 +25,7 @@ app.post('/api/store-url/:url', StoreURL, (req :Request, res: Response, next: Ne
     res.send(res.locals.result);
 });
 
-//stores url into db
+//gets url from db
 app.get('/api/all-urls', GetAllURLS, (req :Request, res: Response, next: NextFunction) => {
     res.send(res.locals.result);
 });

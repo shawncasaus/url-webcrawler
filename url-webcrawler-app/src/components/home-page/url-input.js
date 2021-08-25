@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import {Form, Button, Col, Row} from 'react-bootstrap';
